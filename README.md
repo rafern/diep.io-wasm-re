@@ -28,3 +28,6 @@ General factoids:
   own implementation
 - code is being refactored manually because i don't know any tools that do this
   automatically
+
+Cool resources that helped me a lot:
+- https://github.com/HueHanaejistla/diep.io-protocol-wiki
