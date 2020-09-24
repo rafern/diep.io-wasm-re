@@ -7,14 +7,15 @@ which functions are part of the standard library so that reverse engineering
 becomes easier
 
 `build_[hash goes here].wasm.wasm` is the WASM binary. The decompiled code is
-`wasm_decomp.c`. However, if you want the original decompiled code with no
-comments and refactoring, you can find this in `wasm_decomp_original.c`
+`decomp_[hash goes here].c`. However, if you want the original decompiled code
+with no comments and refactoring, you can find this in
+`decomp_original_[hash goes here].c`
 
 `build_[hash goes here].wasm.js` is the emscripten bootstrap for the binary. The
-beautified version is `build_beaut.js`
+beautified version is `bootstrap_beaut_[hash goes here].js`
 
-`wasm_obj_dump.txt` is the raw memory found in the binary, generated with
-`wasm-objdump`
+`objdump_[hash goes here].txt` is the raw memory found in the binary, generated
+with `wasm-objdump`
 
 General factoids:
 - decompiled with `wasm2c`. `wasm2c` generates really shitty code because WASM
@@ -31,3 +32,14 @@ General factoids:
 
 Cool resources that helped me a lot:
 - https://github.com/HueHanaejistla/diep.io-protocol-wiki
+
+Build history:
+- ??/??/????: 6f59094d60f98fafc14371671d3ff31ef4d75d9e
+  - This is the version being reverse-engineered, once this is decoded, you
+    could compare each function's old code with newer code to know what each
+    function is
+- 24/09/2020: 6f874414d08a988a0525d9053773d7f0d407a670
+  - WASM to JS function mappings changed
+  - Internal WASM function names changed
+  - Some code modified
+  - Internal structures have different offsets, maybe they are auto-shuffled?
